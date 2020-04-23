@@ -2,7 +2,6 @@
 <ruleset name="PHP Coding Standard">
     <!-- Default directory to check if there are no directories argument  -->
     <file>app</file>
-    <file>resources</file>
 
     <!-- Add PSR1 standard -->
     <rule ref="PSR1"/>
