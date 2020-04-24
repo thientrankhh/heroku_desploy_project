@@ -14,13 +14,13 @@ class CreateOrderProductsTable extends Migration
     public function up()
     {
         Schema::create('order_products', function (Blueprint $table) {
-            $table->bigIncrements('order_product_id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->decimal('price',10,1);
             $table->foreign('product_id')->references('id')->on('products');
-            $table->foreign('order_id')->references('order_id')->on('orders');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
     }

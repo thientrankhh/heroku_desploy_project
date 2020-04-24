@@ -20,7 +20,6 @@ class OrdersTableSeeder extends Seeder
                 'email' => 'thientrankhh@gmail.com',
                 'order_notes' => '',
                 'order_date' => '2020-04-24',
-                'order_status' => '0'
            ]
        ];
 

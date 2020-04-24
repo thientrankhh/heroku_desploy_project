@@ -14,7 +14,7 @@ class CreateOrdersTable extends Migration
     public function up()
     {
         Schema::create('orders', function (Blueprint $table) {
-            $table->bigIncrements('order_id');
+            $table->bigIncrements('id');
             $table->decimal('total_price',10,1);
             $table->string('customer_name');
             $table->string('address');
@@ -22,7 +22,6 @@ class CreateOrdersTable extends Migration
             $table->string('email');
             $table->string('order_notes');
             $table->dateTime('order_date');
-            $table->boolean('order_status')->default(0);
             $table->timestamps();
         });
     }
