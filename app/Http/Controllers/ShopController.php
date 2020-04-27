@@ -7,18 +7,20 @@ use App\Model\Product;
 
 class ShopController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $products = Product::paginate(6)->withPath('products');
 
         return view('user.products', [ 'products' => $products ]);
     }
 
-    public function cart(){
-
+    public function cart()
+    {
     }
 
-    public function addToCart($id){
+    public function addToCart($id)
+    {
         $product = Product::find($id);
         
         \Cart::add(array(
@@ -33,7 +35,8 @@ class ShopController extends Controller
         return redirect()->back();
     }
 
-    public function removeFromCart($id){
+    public function removeFromCart($id)
+    {
         \Cart::remove($id);
         
         return redirect()->back();
