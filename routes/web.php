@@ -15,6 +15,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// User
+Route::get('products', 'ShopController@index');
+
+//Cart
+Route::get('cart', 'ShopController@cart');
+Route::get('add-to-cart/{id}', 'ShopController@addToCart');
+Route::get('remove-from-cart/{id}', 'ShopController@removeFromCart');
 //Admin
 Route::group(['prefix'=>'admin','as'=>'admin.', 'namespace' => 'Admin'], function () {
     Route::get('/','LoginController@showLogin')->name('showLogin');
