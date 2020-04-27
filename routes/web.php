@@ -24,9 +24,12 @@ Route::get('cart', 'ShopController@cart');
 Route::get('add-to-cart/{id}', 'ShopController@addToCart');
 Route::get('remove-from-cart/{id}', 'ShopController@removeFromCart');
 //Admin
-Route::group(['prefix'=>'admin','as'=>'admin.', 'namespace' => 'Admin'], function () {
-    Route::get('/','LoginController@showLogin')->name('showLogin');
-    Route::post('/handle','LoginController@handleLogin')->name('handleLogin');
-    Route::get('/logout','LoginController@logout')->name('logout');
-    Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin'], function () {
+    Route::get('/', 'LoginController@showLogin')->name('showLogin');
+    Route::post('/handle', 'LoginController@handleLogin')->name('handleLogin');
+    Route::get('/logout', 'LoginController@logout')->name('logout');
+    Route::get('/dashboard', 'DashboardController@dashboard')->name('dashboard');
+    //Product
+    Route::get('/product', 'ProductController@listAllProducts')->name('listAllProducts');
+
 });
