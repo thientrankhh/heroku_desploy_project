@@ -24,14 +24,14 @@ class LoginController extends Controller
         }
         //Check password
         if (!Hash::check($request->password, bcrypt($user->password))) {
-
             return redirect()->back()->with('error', 'Password Invalid');
         }
 
         return redirect()->route('admin.dashboard')->with('success', 'Login Successfull');
     }
 
-    public function logout() {
-        return redirect()->route('admin.showLogin')->with('logout','Logout Success !');
+    public function logout()
+    {
+        return redirect()->route('admin.showLogin')->with('logout', 'Logout Success !');
     }
 }
