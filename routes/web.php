@@ -18,6 +18,7 @@ Route::get('/', function () {
 //Admin
 Route::group(['prefix'=>'admin','as'=>'admin.', 'namespace' => 'Admin'], function () {
     Route::get('/','LoginController@showLogin')->name('showLogin');
+    Route::post('/handle','LoginController@handleLogin')->name('handleLogin');
+    Route::get('/logout','LoginController@logout')->name('logout');
     Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
-
 });

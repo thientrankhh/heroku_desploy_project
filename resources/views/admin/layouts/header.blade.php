@@ -12,7 +12,7 @@
             <a href="#" class="nav-link">Contact</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-            <a href="" class="btn btn-danger nav-link" style="font-weight: bold; color: black">Logout</a>
+            <a href="{{route('admin.logout')}}" class="btn btn-danger nav-link" style="font-weight: bold; color: black">Logout</a>
         </li>
     </ul>
 
