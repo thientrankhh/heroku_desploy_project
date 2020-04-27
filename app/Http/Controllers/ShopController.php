@@ -12,7 +12,7 @@ class ShopController extends Controller
 
         $products = Product::paginate(6)->withPath('products');
 
-        return view('user.products', [ 'products' => $products ]);
+        return view('user.products', compact('products'));
     }
 
     public function cart()
